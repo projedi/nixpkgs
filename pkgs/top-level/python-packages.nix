@@ -23040,6 +23040,10 @@ in modules // {
     };
   };
 
+  pyobjc = pkgs.recurseIntoAttrs (callPackage ../development/python-modules/pyobjc/default.nix {
+    inherit pythonOlder;
+  });
+
   willow = buildPythonPackage rec {
     name = "willow-${version}";
     version = "0.2.1";
